@@ -14,21 +14,21 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  var _questionIndex = 0;
+  int _questionIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     var questions = [
-      'What\'s your favourite color',
-      'What\'s you favourite animal',
+      'What\'s your favourite color ?',
+      'What\'s you favourite animal ?',
     ];
 
     void _answerQuestion() {
       setState(() {
         if (_questionIndex < questions.length - 1)
-          _questionIndex += 1;
+          _questionIndex++;
         else
-          _questionIndex -= 1;
+          _questionIndex--;
       });
     }
 
@@ -48,9 +48,8 @@ class _MyAppState extends State<MyApp> {
             ),
             RaisedButton(
               child: Text('Answer 2'),
-              onPressed: () {
-                print('Answer 2 Choosen');
-              },
+              onPressed: () =>
+                print('Answer 2 Choosen'),
             ),
             RaisedButton(
               child: Text('Answer 3'),
